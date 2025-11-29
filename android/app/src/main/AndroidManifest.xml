@@ -1,4 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Add Permissions Here -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- camera permission -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- mic permission -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /> <!-- use external device to access audio -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
+
+    <!-- End of permissions -->
     <application
         android:label="daily_flutter_demo"
         android:name="${applicationName}"
