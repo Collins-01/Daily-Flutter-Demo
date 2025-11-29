@@ -52,4 +52,6 @@ samples, guidance on mobile development, and a full API reference.
   <img src="screenshots/app_preview_3.png" width="200" />
   <img src="screenshots/app_preview_4.png" width="200" />
   <img src="screenshots/app_preview_5.png" width="200" />
+  <img src="screenshots/app_preview_6.png" width="200" />
+  <img src="screenshots/app_preview_7.png" width="200" />
 </p>
