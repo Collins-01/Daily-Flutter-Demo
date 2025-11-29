@@ -4,6 +4,7 @@ class Participant {
   final bool isSpeaking;
   final bool micOn;
   final bool cameraOn;
+  final bool isHost;
 
   Participant({
     required this.id,
@@ -11,6 +12,7 @@ class Participant {
     this.isSpeaking = false,
     this.micOn = true,
     this.cameraOn = true,
+    this.isHost = false,
   });
 
   Participant copyWith({
@@ -19,6 +21,7 @@ class Participant {
     bool? isSpeaking,
     bool? micOn,
     bool? cameraOn,
+    bool? isHost,
   }) {
     return Participant(
       id: id ?? this.id,
@@ -26,6 +29,7 @@ class Participant {
       isSpeaking: isSpeaking ?? this.isSpeaking,
       micOn: micOn ?? this.micOn,
       cameraOn: cameraOn ?? this.cameraOn,
+      isHost: isHost ?? this.isHost,
     );
   }
 }

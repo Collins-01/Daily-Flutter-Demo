@@ -2,13 +2,12 @@
 import 'package:daily_flutter_demo/presentation/screens/call/call_screen_viewmodel.dart';
 import 'package:daily_flutter_demo/presentation/screens/call/enums/enums.dart';
 import 'package:daily_flutter_demo/presentation/screens/chat/chat_screen.dart';
+import 'package:daily_flutter_demo/presentation/screens/participants/participants_screen.dart';
 import 'package:daily_flutter_demo/theme/app_colors.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'dart:async';
 
 // call_screen.dart
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'models/participant_model.dart';
 
@@ -96,7 +95,11 @@ class CallScreen extends ConsumerWidget {
                       const SizedBox(width: 12),
                       // Participants Button
                       GestureDetector(
-                        onTap: viewModel.toggleParticipants,
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => ParticipantsScreen(),
+                          ),
+                        ),
                         child: Container(
                           padding: const EdgeInsets.symmetric(
                             horizontal: 16,
