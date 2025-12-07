@@ -1,14 +1,21 @@
+import 'dart:async';
+
+import 'package:daily_flutter/daily_flutter.dart';
 import 'package:daily_flutter_demo/presentation/screens/call/enums/view_mode.dart';
 
-import 'models/participant_model.dart';
+import 'models/call_participant_model.dart';
 
 class CallState {
   final bool isMicOn;
   final bool isCameraOn;
   final ViewMode viewMode;
-  final List<Participant> participants;
+  final List<CallParticipant> participants;
   final Duration callDuration;
   final bool showParticipants;
+  final StreamSubscription<Event>? eventSubscription;
+
+  /// used to control the state of when the user is leaving the call.
+  final bool isLeavingCall;
 
   CallState({
     this.isMicOn = true,
@@ -17,15 +24,20 @@ class CallState {
     this.participants = const [],
     this.callDuration = Duration.zero,
     this.showParticipants = false,
+    this.eventSubscription,
+    this.isLeavingCall = false,
   });
 
   CallState copyWith({
     bool? isMicOn,
     bool? isCameraOn,
     ViewMode? viewMode,
-    List<Participant>? participants,
+    List<CallParticipant>? participants,
     Duration? callDuration,
     bool? showParticipants,
+    StreamSubscription<Event>? eventSubscription,
+    bool setEventsSubscriptionToNull = false,
+    bool? isLeavingCall,
   }) {
     return CallState(
       isMicOn: isMicOn ?? this.isMicOn,
@@ -34,6 +46,8 @@ class CallState {
       participants: participants ?? this.participants,
       callDuration: callDuration ?? this.callDuration,
       showParticipants: showParticipants ?? this.showParticipants,
+      eventSubscription: setEventsSubscriptionToNull ? null : eventSubscription,
+      isLeavingCall: isLeavingCall ?? this.isLeavingCall,
     );
   }
 

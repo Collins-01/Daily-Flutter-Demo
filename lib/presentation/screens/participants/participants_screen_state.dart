@@ -1,13 +1,13 @@
-import 'package:daily_flutter_demo/presentation/screens/call/models/participant_model.dart';
+import 'package:daily_flutter_demo/presentation/screens/call/models/call_participant_model.dart';
 
 class ParticipantsState {
-  final List<Participant> participants;
+  final List<CallParticipant> participants;
   final String searchQuery;
 
   ParticipantsState({this.participants = const [], this.searchQuery = ''});
 
   ParticipantsState copyWith({
-    List<Participant>? participants,
+    List<CallParticipant>? participants,
     String? searchQuery,
   }) {
     return ParticipantsState(
@@ -16,7 +16,7 @@ class ParticipantsState {
     );
   }
 
-  List<Participant> get filteredParticipants {
+  List<CallParticipant> get filteredParticipants {
     if (searchQuery.isEmpty) {
       return participants;
     }

@@ -4,8 +4,11 @@ import 'package:daily_flutter_demo/presentation/screens/splashscreen/splashscree
 import 'package:daily_flutter_demo/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:swift_alert/swift_alert.dart';
 
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() {
+  SwiftAlert.initialize(navigatorKey: navigatorKey);
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -22,6 +25,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         scaffoldBackgroundColor: AppColors.background,
       ),
+      navigatorKey: navigatorKey,
       initialRoute: '/',
       routes: {
         '/': (context) => const SplashScreen(),

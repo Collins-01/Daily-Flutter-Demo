@@ -295,7 +295,7 @@ class InviteScreen extends ConsumerWidget {
                       onTap: () => viewModel.toggleContact(contact.id),
                     ),
                   );
-                }).toList(),
+                }),
               ],
             ),
           ),

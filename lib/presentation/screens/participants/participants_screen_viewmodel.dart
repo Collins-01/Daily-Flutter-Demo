@@ -1,4 +1,4 @@
-import 'package:daily_flutter_demo/presentation/screens/call/models/participant_model.dart';
+import 'package:daily_flutter_demo/presentation/screens/call/models/call_participant_model.dart';
 import 'package:daily_flutter_demo/presentation/screens/participants/participants_screen_state.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -7,7 +7,7 @@ class ParticipantsViewModel extends StateNotifier<ParticipantsState> {
     : super(
         ParticipantsState(
           participants: [
-            Participant(
+            CallParticipant(
               id: '1',
               name: 'John Doe',
               isHost: true,
@@ -15,7 +15,7 @@ class ParticipantsViewModel extends StateNotifier<ParticipantsState> {
               cameraOn: true,
               isSpeaking: true,
             ),
-            Participant(
+            CallParticipant(
               id: '2',
               name: 'Sarah Smith',
               isHost: false,
@@ -23,7 +23,7 @@ class ParticipantsViewModel extends StateNotifier<ParticipantsState> {
               cameraOn: true,
               isSpeaking: false,
             ),
-            Participant(
+            CallParticipant(
               id: '3',
               name: 'Mike Johnson',
               isHost: false,
@@ -31,7 +31,7 @@ class ParticipantsViewModel extends StateNotifier<ParticipantsState> {
               cameraOn: true,
               isSpeaking: false,
             ),
-            Participant(
+            CallParticipant(
               id: '4',
               name: 'Emma Wilson',
               isHost: false,
@@ -39,7 +39,7 @@ class ParticipantsViewModel extends StateNotifier<ParticipantsState> {
               cameraOn: false,
               isSpeaking: false,
             ),
-            Participant(
+            CallParticipant(
               id: '5',
               name: 'David Brown',
               isHost: false,
@@ -47,7 +47,7 @@ class ParticipantsViewModel extends StateNotifier<ParticipantsState> {
               cameraOn: true,
               isSpeaking: false,
             ),
-            Participant(
+            CallParticipant(
               id: '6',
               name: 'Lisa Anderson',
               isHost: false,

@@ -1,4 +1,4 @@
-class Participant {
+class CallParticipant {
   final String id;
   final String name;
   final bool isSpeaking;
@@ -6,7 +6,7 @@ class Participant {
   final bool cameraOn;
   final bool isHost;
 
-  Participant({
+  CallParticipant({
     required this.id,
     required this.name,
     this.isSpeaking = false,
@@ -15,7 +15,7 @@ class Participant {
     this.isHost = false,
   });
 
-  Participant copyWith({
+  CallParticipant copyWith({
     String? id,
     String? name,
     bool? isSpeaking,
@@ -23,7 +23,7 @@ class Participant {
     bool? cameraOn,
     bool? isHost,
   }) {
-    return Participant(
+    return CallParticipant(
       id: id ?? this.id,
       name: name ?? this.name,
       isSpeaking: isSpeaking ?? this.isSpeaking,

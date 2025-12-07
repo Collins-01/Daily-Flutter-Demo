@@ -1,1 +1,1 @@
-export 'participant_model.dart';
+export 'call_participant_model.dart';

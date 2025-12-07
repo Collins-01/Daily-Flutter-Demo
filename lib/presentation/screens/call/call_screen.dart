@@ -9,10 +9,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 // call_screen.dart
 import 'package:flutter/material.dart';
 
-import 'models/participant_model.dart';
+import 'models/call_participant_model.dart';
 
 class CallScreen extends ConsumerWidget {
-  const CallScreen({Key? key}) : super(key: key);
+  const CallScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -251,7 +251,7 @@ class CallScreen extends ConsumerWidget {
     );
   }
 
-  Widget _buildSpeakerView(List<Participant> participants) {
+  Widget _buildSpeakerView(List<CallParticipant> participants) {
     return Column(
       children: [
         // Main Speaker
@@ -287,7 +287,7 @@ class CallScreen extends ConsumerWidget {
     );
   }
 
-  Widget _buildGridView(List<Participant> participants) {
+  Widget _buildGridView(List<CallParticipant> participants) {
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
@@ -304,7 +304,7 @@ class CallScreen extends ConsumerWidget {
 }
 
 class _ParticipantTile extends StatelessWidget {
-  final Participant participant;
+  final CallParticipant participant;
   final bool isLarge;
 
   const _ParticipantTile({required this.participant, this.isLarge = false});

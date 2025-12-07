@@ -1,4 +1,4 @@
-import 'package:daily_flutter_demo/presentation/screens/call/models/participant_model.dart';
+import 'package:daily_flutter_demo/presentation/screens/call/models/call_participant_model.dart';
 import 'package:daily_flutter_demo/presentation/screens/invite/invite_screen.dart';
 import 'package:daily_flutter_demo/presentation/screens/participants/participants_screen_viewmodel.dart';
 import 'package:daily_flutter_demo/theme/app_colors.dart';
@@ -184,7 +184,7 @@ class ParticipantsScreen extends ConsumerWidget {
 
   void _showParticipantOptions(
     BuildContext context,
-    Participant participant,
+    CallParticipant participant,
     ParticipantsViewModel viewModel,
   ) {
     showModalBottomSheet(
@@ -287,7 +287,7 @@ class ParticipantsScreen extends ConsumerWidget {
 }
 
 class _ParticipantItem extends StatelessWidget {
-  final Participant participant;
+  final CallParticipant participant;
   final VoidCallback onMoreTap;
 
   const _ParticipantItem({required this.participant, required this.onMoreTap});
